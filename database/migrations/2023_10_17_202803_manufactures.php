@@ -13,17 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('manufactures',function(Blueprint $table){
             $table->id();
-            $table->string('name');
-            $table->string('LastName',150);
-            $table->string('phone',200);
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('codigo');
+            $table->string('nombre');
+            $table->foreignId('pais_origen');
             $table->timestamps();
+            $table->foreign('pais_origen')->references('id')->on('countries');
         });
+        //
     }
 
     /**
@@ -32,7 +30,10 @@ return new class extends Migration
      * @return void
      */
     public function down()
+
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('manufactures');
+
+        //
     }
 };

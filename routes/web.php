@@ -14,10 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('countries.store');
 });
 
-Route::get('/brasil',function(){
+/*Route::get('/brasil',function(){
     return view('brasil');
 });
 
@@ -31,5 +31,13 @@ Route::get('/peru',function(){
 
 Route::get('pruebas/bolivia',function(){
     return view('pruebas.bolivia');
+});*/
+Route::get('/country',[CountryController::class,'index'])->name('countries.index');
+
+Route::post('/country',[CountryController::class,'store'])->name('countries.store');
+
+/*Route::get('/store',function(){
+    return view('layouts.navbar');
 });
+*/
 

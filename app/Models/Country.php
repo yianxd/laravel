@@ -13,8 +13,8 @@ class Country extends Model
 
     protected $fillable=[
         'id',
-        'codigo_pais',
-        'nombre'
+        'country_code',
+        'country_name'
     ];
 
 

@@ -10,12 +10,12 @@ class CountryController extends Controller
     //
     public function store(Request $request){
         $request->validate([
-            'codigo_pais'=>'required|string|min:2|max:10',
-            'nombre'=>'required|string|min:4|max:50'
+            'country_code'=>'required|string|min:2|max:10',
+            'country_name'=>'required|string|min:4|max:50'
         ]);
         Country::create([
-            'codigo_pais'=>$request->codigo_pais,
-            'nombre'=>$request->nombre
+            'country_code'=>$request->country_code,
+            'country_name'=>$request->country_name
         ]);
         return redirect()->back()
         ->with('success','Pais creado correctamente');

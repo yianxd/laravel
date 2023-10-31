@@ -15,7 +15,7 @@ use App\Http\Controllers\CountryController;
 */
 
 Route::get('/', function () {
-    return view('countries.store');
+    return view('countries.create');
 });
 
 /*Route::get('/brasil',function(){
@@ -33,10 +33,11 @@ Route::get('/peru',function(){
 Route::get('pruebas/bolivia',function(){
     return view('pruebas.bolivia');
 });*/
-Route::get('/country',[CountryController::class,'index'])->name('countries.index');
+//Route::get('/country',[CountryController::class,'index'])->name('countries.index');
 
 Route::post('/country',[CountryController::class,'store'])->name('countries.store');
 
+Route::resource('/listar',CountryController::class);
 /*Route::get('/store',function(){
     return view('layouts.navbar');
 });

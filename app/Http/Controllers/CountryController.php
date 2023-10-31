@@ -25,4 +25,11 @@ class CountryController extends Controller
         $countries = Country::get();
         return view('counties.index',['country'=>$counties]);
     }*/
+
+    public function index(Request $rqeuest)
+    {
+        $countries=Country::all();
+        return view('countries.index',compact('countries'));
+
+    }
 }

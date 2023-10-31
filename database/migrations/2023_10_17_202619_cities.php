@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('cities',function(Blueprint $table){
             $table->id();
-            $table->string('codigo_pais',10);
+            $table->string('country_code',10);
             $table->string('nombre');
             $table->timestamps();
-            $table->foreign('codigo_pais')->references('codigo_pais')->on('countries')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('country_code')->references('country_code')->on('countries')->onDelete('cascade')->onUpdate('cascade');
             });
     }
 

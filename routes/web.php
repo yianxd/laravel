@@ -38,7 +38,7 @@ Route::get('pruebas/bolivia',function(){
 Route::post('/country/store',[CountryController::class,'store'])->name('country.store');
 Route::get('/country/index',[CountryController::class,'index'])->name('country.index');
 Route::get('/country/edit',[CountryController::class,'edit'])->name('country.edit');
-Route::resource('/country/show',CountryController::class);
+Route::resource('/country/show',CountryController::class); //aaa
 /*Route::get('/store',function(){
     return view('layouts.navbar');
 });
